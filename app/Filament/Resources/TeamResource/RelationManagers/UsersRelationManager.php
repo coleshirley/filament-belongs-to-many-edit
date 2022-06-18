@@ -43,8 +43,9 @@ class UsersRelationManager extends RelationManager
                 Tables\Actions\AttachAction::make()
                     ->form(fn (AttachAction $action) => [
                         $action->getRecordSelect()
+                            ->disableLabel(false)
                             ->label('Email')
-                            ->disableLabel(false),
+                            ->required(),
                         Forms\Components\TextInput::make('role')
                             ->label('role')
                             ->required(),
